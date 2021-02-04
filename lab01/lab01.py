@@ -89,11 +89,12 @@ def test3():
 
 # implement this function
 def gen_pattern(chars):
-    l = len(chars)
-    for a in range(1,l):
-        for b in range
-        '.'.join(chars)
-        chars.center(l,'.')
+    pass
+    #l = len(chars)
+    #for a in range(1,l):
+        #for b in range
+        #'.'.join(chars)
+        #chars.center(l,'.')
         
 
 def test4():
