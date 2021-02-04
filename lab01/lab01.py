@@ -2,6 +2,7 @@ import unittest
 import sys
 from contextlib import contextmanager
 from io import StringIO
+import math
 
 #################################################################################
 # TESTING OUTPUTS
@@ -22,7 +23,14 @@ def captured_output():
 
 # implement this function
 def is_perfect(n):
-    pass
+    num = 0 #variable that will keep track of total integer numbers
+    for a in range (1,n):
+        if a%n == 0:
+            num = num + a
+    if num == n:
+        return True
+    else:
+        return False
 
 # (3 points)
 def test1():
@@ -32,7 +40,8 @@ def test1():
     for n in (1, 2, 3, 4, 5, 10, 20):
         tc.assertFalse(is_perfect(n), '{} should not be perfect'.format(n))
     for n in range(30, 450):
-        tc.assertFalse(is_perfect(n), '{} should not be perfect'.format(n))
+        tc.assertFalse(is_perfect(n), '{} should not be perfect'.format(n)) 
+    
 
 #################################################################################
 # EXERCISE 2
@@ -40,8 +49,14 @@ def test1():
 
 # implement this function
 def multiples_of_3_and_5(n):
-    pass
-
+    num = 0
+    for a in range (1,n):
+        if a%3 == 0:
+            num = num + a
+        elif a%5 == 0:
+            num = num + a
+    return num
+    
 # (3 points)
 def test2():
     tc = unittest.TestCase()
@@ -53,7 +68,14 @@ def test2():
 # EXERCISE 3
 #################################################################################
 def integer_right_triangles(p):
-    pass
+    count = 0
+    for a in range(1,p):
+        for b in range(a,p):
+            c = math.hypot(a,b)
+            if math.is_integer(c) == True:
+                if a + b + c == p:
+                    count = count + 1
+    return count   
 
 def test3():
     tc = unittest.TestCase()
@@ -67,7 +89,12 @@ def test3():
 
 # implement this function
 def gen_pattern(chars):
-    pass
+    l = len(chars)
+    for a in range(1,l):
+        for b in range
+        '.'.join(chars)
+        chars.center(l,'.')
+        
 
 def test4():
     tc = unittest.TestCase()
