@@ -17,8 +17,15 @@ def mysort(lst: List[T], compare: Callable[[T, T], int]) -> List[T]:
     right element, 1 if the left is larger than the right, and 0 if the two
     elements are equal.
     """
-    pass
 
+    for j in range(1, len(lst[T])):
+        for k in range(j,0,-1):
+            if lst[k] < lst[k-1]:
+                lst[k] , lst[k-1] = lst[k-1] , lst[k]
+            else:
+                break
+    return lst
+    
 def mybinsearch(lst: List[T], elem: S, compare: Callable[[T, S], int]) -> int:
     """
     This method search for elem in lst using binary search.
@@ -27,8 +34,16 @@ def mybinsearch(lst: List[T], elem: S, compare: Callable[[T, S], int]) -> int:
     position of the first (leftmost) match for elem in lst. If elem does not
     exist in lst, then return -1.
     """
-    pass
 
+    for j in range(0, len(lst[])):
+        if S == lst[j]:
+            return j
+            break
+        else S=! lst[j]:
+            return -1
+        
+        
+    
 class Student():
     """Custom class to test generic sorting and searching."""
     def __init__(self, name: str, gpa: float):
@@ -112,7 +127,10 @@ class PrefixSearcher():
         Initializes a prefix searcher using a document and a maximum
         search string length k.
         """
-        pass
+        prefixes = []
+        index = 0
+        for j in range(0. len(document)):
+            prefix.append(index)
 
     def search(self, q):
         """
