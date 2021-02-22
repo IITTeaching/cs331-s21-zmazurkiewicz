@@ -34,14 +34,7 @@ ROMEO_SOLILOQUY = """
 # Implement this function
 def compute_ngrams(toks, n=2):
     """Returns an n-gram dictionary based on the provided list of tokens."""
-    dict = {}
-    for j in range(0,len(toks)-n+1):
-        #add to the dictionary
-        temp = []
-        for k in range(j+1,j+n):
-            #append that word to toks to the temperary list
-         #try appending this tuple to the list associated with this word, then if there is no world in the list, make a new list with this word as the key. Add temporary list to the dictionary
-         #return dictionary
+    pass
 
 def test1():
     test1_1()
@@ -100,25 +93,7 @@ def test1_2():
 ################################################################################
 # Implement this function
 def gen_passage(ngram_dict, length=100):
-    passage = []#instead of making a string, make a list of each word and then at the end return space and then use join with the space inbetween
-    key = random.choice(sort(ngram_dict)) #took a random key from the dictionary that they gave us
-    #then add the key to the list
-    #each key could have multiple tuples choose a random one from there, add every string from within that tuple to the list
-    choose = rand.choice(ngram_dict)
-    #loop through each word and then add it to the passage
-    while key == choose[-1]:
-        count = 0
-        #while x < len-2
-        if key != dict:
-            key = rand.choice(sort(ngram_dict))
-            passage.append(key)
-            x += 1
-            #then you add this to the passage
-            #checks ngram_dict for the key
-            if x == len-2:
-                break
-             #add one to the counter
-    return the passage
+    pass
 
 # 50 Points
 def test2():
