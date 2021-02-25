@@ -35,17 +35,12 @@ def mybinsearch(lst: List[T], elem: S, compare: Callable[[T, S], int]) -> int:
     exist in lst, then return -1.
     """
 
-    beginning = 0
-    end = len(lst)
-    mid = (beginning + end) // 2
-    while (beginning <= end):
-        if compare(lst[mid], elem) == 0:
-            return mid
-        elif compare(lst[mid], elem) == 1:
-            end = mid - 1
-        elif compare(lst[mid], elem) == -1:
-            end = mid + 1
-    return -1
+    for j in range(0, len(lst[])):
+        if S == lst[j]:
+            return j
+            break
+        else S=! lst[j]:
+            return -1
         
         
     
@@ -132,7 +127,7 @@ class PrefixSearcher():
         Initializes a prefix searcher using a document and a maximum
         search string length k.
         """
-        self.data = prefixsearcher[]
+        self.data = []
         index = 0
         for j in range(0, len(document)):
             self.data.append(document(j, j+(k-1))
@@ -148,19 +143,6 @@ class PrefixSearcher():
         Exception.
         """
         if q > n:
-            raise Exception("q in not longer than n")
-        if q <= n:
-            beginning = 0
-            end = self.len
-            mid = (beginning + end) // 2
-            while (beginning <= end):
-                if compare(lst[mid], q) == 1:
-                    end = mid - 1
-                elif compare(lst[mid], q) == -1:
-                    end = mid + 1
-                elif compare(lst[mid], q) == 0:
-                    return true
-                    break
             
 
 # 30 Points
@@ -203,21 +185,18 @@ class SuffixArray():
         """
         Creates a suffix array for document (a string).
         """
-        pass
-        ##self.data = array[document]
-        
+        self.data = array(document)
+
 
     def positions(self, searchstr: str):
         """
         Returns all the positions of searchstr in the documented indexed by the suffix array.
         """
         pass
-        ##for j in range(0, len(self.data)):
-            
 
     def contains(self, searchstr: str):
         """
-        Returns true of searchstr is contained in document.
+        Returns true of searchstr is coontained in document.
         """
         pass
 
