@@ -8,7 +8,7 @@ S = TypeVar('S')
 #################################################################################
 # EXERCISE 1
 #################################################################################
-def mysort(lst: List[T], compare: Callable[[T, T], int]) -> List[T]:
+def mysort(lst, compare)
     """
     This method should sort input list lst of elements of some type T.
 
@@ -35,12 +35,17 @@ def mybinsearch(lst: List[T], elem: S, compare: Callable[[T, S], int]) -> int:
     exist in lst, then return -1.
     """
 
-    for j in range(0, len(lst[])):
-        if S == lst[j]:
-            return j
-            break
-        else S=! lst[j]:
-            return -1
+    beginning = 0
+    end = len(lst)
+    mid = (beginning + end) // 2
+    while (beginning <= end):
+        if compare(lst[mid], elem) == 0:
+            return mid
+        elif compare(lst[mid], elem) == 1:
+            end = mid - 1
+        elif compare(lst[mid], elem) == -1:
+            end = mid + 1
+    return -1
         
         
     
@@ -127,7 +132,7 @@ class PrefixSearcher():
         Initializes a prefix searcher using a document and a maximum
         search string length k.
         """
-        self.data = []
+        self.data = prefixsearcher[]
         index = 0
         for j in range(0, len(document)):
             self.data.append(document(j, j+(k-1))
@@ -143,6 +148,19 @@ class PrefixSearcher():
         Exception.
         """
         if q > n:
+            raise Exception("q in not longer than n")
+        if q <= n:
+            beginning = 0
+            end = self.len
+            mid = (beginning + end) // 2
+            while (beginning <= end):
+                if compare(lst[mid], q) == 1:
+                    end = mid - 1
+                elif compare(lst[mid], q) == -1:
+                    end = mid + 1
+                elif compare(lst[mid], q) == 0:
+                    return true
+                    break
             
 
 # 30 Points
@@ -185,20 +203,29 @@ class SuffixArray():
         """
         Creates a suffix array for document (a string).
         """
-        self.data = array(document)
-
+        self.doc = array[document]
+        index = 0
+        while index <= len(document):
+            for j in range(index, len(document)):
+                self.doc.append(document(index,len(document)))
+                index += 1
 
     def positions(self, searchstr: str):
         """
         Returns all the positions of searchstr in the documented indexed by the suffix array.
         """
-        pass
+        for j in range(0, len(self.data)):
+            self.comp = lambda x,y: 0 if self.doc[x;x+len(y)] == y else (-1 if self.doc[x;x+len(y)] < y else 1)
+            if self.comp == 0:
+                return x
+
 
     def contains(self, searchstr: str):
         """
-        Returns true of searchstr is coontained in document.
+        Returns true of searchstr is contained in document.
         """
-        pass
+        self.comp = lambda x,y: True if self.doc[x;x+len(y)] == y else (-1 if self.doc[x;x+len(y)] < y)
+        return self.comp
 
 # 40 Points
 def test3():
