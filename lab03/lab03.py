@@ -18,7 +18,7 @@ def mysort(lst, compare)
     elements are equal.
     """
 
-    for j in range(1, len(lst[T])):
+    for j in range(1, len(lst[]):
         for k in range(j,0,-1):
             if lst[k] < lst[k-1]:
                 lst[k] , lst[k-1] = lst[k-1] , lst[k]
