@@ -203,23 +203,29 @@ class SuffixArray():
         """
         Creates a suffix array for document (a string).
         """
-        pass
-        ##self.data = array[document]
-        
+        self.doc = array[document]
+        index = 0
+        while index <= len(document):
+            for j in range(index, len(document)):
+                self.doc.append(document(index,len(document)))
+                index += 1
 
     def positions(self, searchstr: str):
         """
         Returns all the positions of searchstr in the documented indexed by the suffix array.
         """
-        pass
-        ##for j in range(0, len(self.data)):
-            
+        for j in range(0, len(self.data)):
+            self.comp = lambda x,y: 0 if self.doc[x;x+len(y)] == y else (-1 if self.doc[x;x+len(y)] < y else 1)
+            if self.comp == 0:
+                return x
+
 
     def contains(self, searchstr: str):
         """
         Returns true of searchstr is contained in document.
         """
-        pass
+        self.comp = lambda x,y: True if self.doc[x;x+len(y)] == y else (-1 if self.doc[x;x+len(y)] < y)
+        return self.comp
 
 # 40 Points
 def test3():
