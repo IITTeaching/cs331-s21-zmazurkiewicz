@@ -8,7 +8,7 @@ S = TypeVar('S')
 #################################################################################
 # EXERCISE 1
 #################################################################################
-def mysort(lst, compare) -> List[T]:
+def mysort(lst, compare: Callabale[[T, T], int]):
     """
     This method should sort input list lst of elements of some type T.
 
