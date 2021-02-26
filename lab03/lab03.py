@@ -138,7 +138,7 @@ class PrefixSearcher():
         for j in range(0, len(document)):
             self.data.append(document(j, j+(k-1))
             ##index = index + 1
-        mysort(self.data, lambda x,y:  0 if x == y else (-1 if x < y else 1))
+        mysort(self.data, ??)
 
 
     def search(self, q):
