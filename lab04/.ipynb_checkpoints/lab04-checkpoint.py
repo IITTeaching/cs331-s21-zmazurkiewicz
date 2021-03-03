@@ -117,16 +117,11 @@ class ArrayList:
         and enclosed by square brackets. E.g., for a list containing values
         1, 2 and 3, returns '[1, 2, 3]'."""
         ### BEGIN SOLUTION
-        print("[")
-        if self.data != None:
-            for j in range(0, self)
-        print("]")
         ### END SOLUTION
 
     def __repr__(self):
         """Supports REPL inspection. (Same behavior as `str`.)"""
         ### BEGIN SOLUTION
-        
         ### END SOLUTION
 
 
@@ -135,7 +130,6 @@ class ArrayList:
     def append(self, value):
         """Appends value to the end of this list."""
         ### BEGIN SOLUTION
-        
         ### END SOLUTION
 
     def insert(self, idx, value):
@@ -182,13 +176,11 @@ class ArrayList:
     def min(self):
         """Returns the minimum value in this list."""
         ### BEGIN SOLUTION
-        
         ### END SOLUTION
 
     def max(self):
         """Returns the maximum value in this list."""
         ### BEGIN SOLUTION
-        
         ### END SOLUTION
 
     def index(self, value, i=0, j=None):
