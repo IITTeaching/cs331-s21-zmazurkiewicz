@@ -117,10 +117,10 @@ class ArrayList:
         and enclosed by square brackets. E.g., for a list containing values
         1, 2 and 3, returns '[1, 2, 3]'."""
         ### BEGIN SOLUTION
-        print("[")
         if self.data != None:
-            for j in range(0, self)
-        print("]")
+            print(f'[ {'.'.join(self)} ]')
+        else:
+            print("[]")
         ### END SOLUTION
 
     def __repr__(self):
@@ -169,6 +169,11 @@ class ArrayList:
     def __contains__(self, value):
         """Implements `val in self`. Returns true if value is found in this list."""
         ### BEGIN SOLUTION
+        for j in range(0,self):
+            if j == value:
+                return True
+            else:
+                return False
         ### END SOLUTION
 
 
