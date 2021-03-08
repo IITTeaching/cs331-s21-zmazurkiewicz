@@ -123,7 +123,7 @@ class ArrayList:
                 string = string + self.data[j]
         else:
             break
-        string = string + "]"    
+        string = string + "]" 
         ### END SOLUTION
 
     def __repr__(self):
