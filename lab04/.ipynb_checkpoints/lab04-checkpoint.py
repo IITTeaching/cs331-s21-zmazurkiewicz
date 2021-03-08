@@ -117,11 +117,25 @@ class ArrayList:
         and enclosed by square brackets. E.g., for a list containing values
         1, 2 and 3, returns '[1, 2, 3]'."""
         ### BEGIN SOLUTION
+        string = "["
+        if self.data != None:
+            for j in range(0,len(self.data)):
+                string = string + self.data[j]
+        else:
+            break
+        string = string + "]"    
         ### END SOLUTION
 
     def __repr__(self):
         """Supports REPL inspection. (Same behavior as `str`.)"""
         ### BEGIN SOLUTION
+        string = "["
+        if self.data != None:
+            for j in range(0,len(self.data)):
+                string = string + self.data[j]
+        else:
+            break
+        string = string + "]"
         ### END SOLUTION
 
 
@@ -130,6 +144,7 @@ class ArrayList:
     def append(self, value):
         """Appends value to the end of this list."""
         ### BEGIN SOLUTION
+        
         ### END SOLUTION
 
     def insert(self, idx, value):
@@ -143,6 +158,7 @@ class ArrayList:
         """Deletes and returns the element at idx (which is the last element,
         by default)."""
         ### BEGIN SOLUTION
+        normalize the index
         ### END SOLUTION
 
     def remove(self, value):
@@ -158,11 +174,22 @@ class ArrayList:
         """Returns True if this ArrayList contains the same elements (in order) as
         other. If other is not an ArrayList, returns False."""
         ### BEGIN SOLUTION
+        checked if it is not an array list
+        printed the type
+        
+        then check the length
+        
+        then went through each value and if the value isnt equal to each other than it is false'
         ### END SOLUTION
 
     def __contains__(self, value):
         """Implements `val in self`. Returns true if value is found in this list."""
         ### BEGIN SOLUTION
+        for j in range(0,self):
+            if j == value:
+                return True
+            else:
+                return False
         ### END SOLUTION
 
 
@@ -176,11 +203,25 @@ class ArrayList:
     def min(self):
         """Returns the minimum value in this list."""
         ### BEGIN SOLUTION
+        min = self.data[0]
+        for j in range(0, len(self.data)):
+            if self.data[j] < min:
+                min = self.data[j]
+            else:
+                min = min
+        return min
         ### END SOLUTION
 
     def max(self):
         """Returns the maximum value in this list."""
         ### BEGIN SOLUTION
+        max = self.data[0]
+        for j in range (0,len(self.data)):
+            if self.data[j] > max:
+                max = self.data[j]
+            else:
+                max = max
+        return max
         ### END SOLUTION
 
     def index(self, value, i=0, j=None):
@@ -227,6 +268,8 @@ class ArrayList:
     def __iter__(self):
         """Supports iteration (via `iter(self)`)"""
         ### BEGIN SOLUTION
+        for j in range(0,self.len):
+            yield self.data[j]
         ### END SOLUTION
 
 ################################################################################
