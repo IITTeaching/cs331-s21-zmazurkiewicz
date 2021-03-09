@@ -160,9 +160,7 @@ class ArrayList:
         ### BEGIN SOLUTION
        #len0 = self.len
        #if len(self.data) = self.len:
-        
-       #then appended the last element of the list
-        
+       #then appended the last element of the list 
         ### END SOLUTION
 
     def pop(self, idx=-1):
@@ -197,14 +195,19 @@ class ArrayList:
         """Returns True if this ArrayList contains the same elements (in order) as
         other. If other is not an ArrayList, returns False."""
         ### BEGIN SOLUTION
-       #checked if it is not an array list
-       #if 
-       #use != if it is not equal to each other 
-       #printed the type
-        
-       #then check the length
-        
-       #then went through each value and if the value isnt equal to each other than it is false'
+        result = True
+        if Type(self) != ArrayList:
+            result = False
+        else if Type(self) == ArrayList:
+            if len(self) != len(other):
+                result = False
+            else:
+                for k in range(0,len(self)):
+                    if self.data[k] == other.data[k]:
+                        result = True
+                    else:
+                        result = False
+        return result
         ### END SOLUTION
 
     def __contains__(self, value):
