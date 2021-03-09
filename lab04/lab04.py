@@ -159,7 +159,7 @@ class ArrayList:
         to appending the value --- is permitted. Raises IndexError if idx is invalid."""
         ### BEGIN SOLUTION
        #len0 = self.len
-       #if len(self.data) == self.len:
+       #if len(self.data) = self.len:
         
        #then appended the last element of the list
         
@@ -169,23 +169,25 @@ class ArrayList:
         """Deletes and returns the element at idx (which is the last element,
         by default)."""
         ### BEGIN SOLUTION
-       #normalize index
-       #if index >= lenght:
-         #  raise an error
-        #tore what was at the index as well
-        
-       #self.__delitem__(idx)
-       #self.append()
+        atIndex = self.data(idx)
+        _normalize_idx(idx)
+        if index >= length:
+            raise Error("out of bounds index")
+        else:     
+            self.__delitem__(idx)
+        return  atIndex
         ### END SOLUTION
 
     def remove(self, value):
         """Removes the first (closest to the front) instance of value from the
         list. Raises a ValueError if value is not found in the list."""
         ### BEGIN SOLUTION
-       #for j in range(0,len(self.data)):
-        #   if j == value:
-         #      del self[j]
-          # else
+        for j in range(0,len(self.data)):
+            if j == value:
+                self.__delitem__(j)
+                break
+            else:
+                raise ValueError("Value is not found in list")
         ### END SOLUTION
 
 
@@ -208,7 +210,7 @@ class ArrayList:
     def __contains__(self, value):
         """Implements `val in self`. Returns true if value is found in this list."""
         ### BEGIN SOLUTION
-        for j in range(0,self):
+        for j in range(0, self):
             if j == value:
                 return True
             else:
@@ -221,29 +223,30 @@ class ArrayList:
     def __len__(self):
         """Implements `len(self)`"""
         ### BEGIN SOLUTION
+        length = len(self)
         ### END SOLUTION
 
     def min(self):
         """Returns the minimum value in this list."""
         ### BEGIN SOLUTION
-        min = self.data[0]
-        for j in range(0, len(self.data)):
-            if self.data[j] < min:
-                min = self.data[j]
+        minX = self.data[0]
+        for j in range(0, len(self)):
+            if self.data[j] < minX:
+                minX = self.data[j]
             else:
-                min = min
-        return min
+                minX = minX
+        return minX
         ### END SOLUTION
 
     def max(self):
         """Returns the maximum value in this list."""
         ### BEGIN SOLUTION
-        max = self.data[0]
-        for j in range (0,len(self.data)):
-            if self.data[j] > max:
-                max = self.data[j]
+        maxX = self.data[0]
+        for j in range (0,len(self)):
+            if self.data[j] > maxX:
+                maxX = self.data[j]
             else:
-                max = max
+                maxX = maxX
         return max
         ### END SOLUTION
 
@@ -253,11 +256,21 @@ class ArrayList:
         specified, search through the end of the list for value. If value
         is not in the list, raise a ValueError."""
         ### BEGIN SOLUTION
+        for k in range(i, j):
+            if self.data[k]:
+                return k
+            else:
+                raise ValueError("Value is not in list")
         ### END SOLUTION
 
     def count(self, value):
         """Returns the number of times value appears in this list."""
         ### BEGIN SOLUTION
+        count = 0
+        for j in range(0, len(self)):
+            if self.data[j] == j:
+                count += 1
+        return count
         ### END SOLUTION
 
 
@@ -268,6 +281,8 @@ class ArrayList:
         instance that contains the values in this list followed by those
         of other."""
         ### BEGIN SOLUTION
+        newArrayList = self + other
+        return newArrayList
         ### END SOLUTION
 
     def clear(self):
@@ -278,13 +293,17 @@ class ArrayList:
         """Returns a new ArrayList instance (with a separate data store), that
         contains the same values as this list."""
         ### BEGIN SOLUTION
-       #newAL = 
+        newAL = []
+        for j in range(0, len(self)):
+            newAL += self.data[j]
+        return newAL
         ### END SOLUTION
 
     def extend(self, other):
         """Adds all elements, in order, from other --- an Iterable --- to this list."""
         ### BEGIN SOLUTION
-       #appended every single one in other. 
+        for j in range(0, len(self)):
+            other.append(self.data[j])
         ### END SOLUTION
 
 
