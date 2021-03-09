@@ -122,7 +122,7 @@ class ArrayList:
             for j in range(0,len(self.data)):
                 string = string + self.data[j]
         else:
-            break
+            string = string
         string = string + "]" 
         ### END SOLUTION
 
