@@ -144,7 +144,13 @@ class ArrayList:
     def append(self, value):
         """Appends value to the end of this list."""
         ### BEGIN SOLUTION
-        
+        if len(self.data) <= self.len:
+            newList = self.data(2 * len(self.data))
+            for j in range(0, self.len):
+                newList[j] = self.data[j]
+            self.data = newList
+        self.data[self.len] = value
+        self.len += 1  
         ### END SOLUTION
 
     def insert(self, idx, value):
@@ -152,19 +158,34 @@ class ArrayList:
         list, as needed. Note that inserting a value at len(self) --- equivalent
         to appending the value --- is permitted. Raises IndexError if idx is invalid."""
         ### BEGIN SOLUTION
+       #len0 = self.len
+       #if len(self.data) == self.len:
+        
+       #then appendedhe last element of the list
+        
         ### END SOLUTION
 
     def pop(self, idx=-1):
         """Deletes and returns the element at idx (which is the last element,
         by default)."""
         ### BEGIN SOLUTION
-        normalize the index
+       #normalize index
+       #if index >= lenght:
+         #  raise an error
+        #tore what was at the index as well
+        
+       #self.__delitem__(idx)
+       #self.append()
         ### END SOLUTION
 
     def remove(self, value):
         """Removes the first (closest to the front) instance of value from the
         list. Raises a ValueError if value is not found in the list."""
         ### BEGIN SOLUTION
+       #for j in range(0,len(self.data)):
+        #   if j == value:
+         #      del self[j]
+          # else
         ### END SOLUTION
 
 
@@ -174,12 +195,14 @@ class ArrayList:
         """Returns True if this ArrayList contains the same elements (in order) as
         other. If other is not an ArrayList, returns False."""
         ### BEGIN SOLUTION
-        checked if it is not an array list
-        printed the type
+       #checked if it is not an array list
+       #if 
+       #use != if it is not equal to each other 
+       #printed the type
         
-        then check the length
+       #then check the length
         
-        then went through each value and if the value isnt equal to each other than it is false'
+       #then went through each value and if the value isnt equal to each other than it is false'
         ### END SOLUTION
 
     def __contains__(self, value):
@@ -255,11 +278,13 @@ class ArrayList:
         """Returns a new ArrayList instance (with a separate data store), that
         contains the same values as this list."""
         ### BEGIN SOLUTION
+       #newAL = 
         ### END SOLUTION
 
     def extend(self, other):
         """Adds all elements, in order, from other --- an Iterable --- to this list."""
         ### BEGIN SOLUTION
+       #appended every single one in other. 
         ### END SOLUTION
 
 
