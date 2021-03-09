@@ -318,6 +318,7 @@ class ArrayList:
         for j in range(0,self.len):
             yield self.data[j]
         ### END SOLUTION
+        
 
 ################################################################################
 # TEST CASES
