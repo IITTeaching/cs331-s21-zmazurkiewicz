@@ -161,7 +161,7 @@ class ArrayList:
        #len0 = self.len
        #if len(self.data) == self.len:
         
-       #then appendedhe last element of the list
+       #then appended the last element of the list
         
         ### END SOLUTION
 
