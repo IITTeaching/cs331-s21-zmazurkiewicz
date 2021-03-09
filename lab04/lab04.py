@@ -198,7 +198,7 @@ class ArrayList:
         result = True
         if Type(self) != ArrayList:
             result = False
-        else if Type(self) == ArrayList:
+        elif Type(self) == ArrayList:
             if len(self) != len(other):
                 result = False
             else:
