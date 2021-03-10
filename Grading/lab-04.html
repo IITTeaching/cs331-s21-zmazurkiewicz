@@ -1,0 +1,116 @@
+
+<html>
+  <head>
+    <title>Lab 04 - Graded Solution</title>
+  </head>
+  <body>
+    <h1>Lab 04 - Graded Solution</h1>
+    <p><b>You scored 30% = 0.6 points for this lab.</b></p>
+    <ul>
+      <li><b>Testing subscript-based acess</b>
+      <ul>
+      <li>Grade Percentage: 15</li>
+      <li>Your solution succeeded taking 0.305 sec</Li>
+      </ul>
+      </li>
+      <li><b>test stringification</b>
+      <ul>
+      <li>Grade Percentage: 10</li>
+      <li>Your solution failed this test case! taking 0.306 sec</Li>
+<li><pre>TypeError: __str__ returned non-string (type NoneType)</pre></li>
+<li><pre>Traceback (most recent call last):
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/execution_base.py", line 60, in call_test_function
+    test_function(
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/core.py", line 48, in wrapper
+    result = test_function(module, *args, **kwargs)
+  File "/var/folders/f7/xnz8v_b13td37s3k4w8t5j2h0000gn/T/tmpg6gbvgfn/lab04-test.py", line 64, in test3_2
+    assertEquals('[]', str(lst))
+TypeError: __str__ returned non-string (type NoneType)
+</pre></li>
+      </ul>
+      </li>
+      <li><b>testing single-element manipulation</b>
+      <ul>
+      <li>Grade Percentage: 15</li>
+      <li>Your solution failed this test case! taking 0.284 sec</Li>
+<li><pre>TypeError: 'ConstrainedList' object is not callable</pre></li>
+<li><pre>Traceback (most recent call last):
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/execution_base.py", line 60, in call_test_function
+    test_function(
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/core.py", line 48, in wrapper
+    result = test_function(module, *args, **kwargs)
+  File "/var/folders/f7/xnz8v_b13td37s3k4w8t5j2h0000gn/T/tmpr2p6gm1v/lab04-test.py", line 89, in test3_3
+    lst.append(to_add)
+  File "<tested-program>", line 148, in append
+TypeError: 'ConstrainedList' object is not callable
+</pre></li>
+      </ul>
+      </li>
+      <li><b>testing predicates</b>
+      <ul>
+      <li>Grade Percentage: 15</li>
+      <li>Your solution failed this test case! taking 0.284 sec</Li>
+<li><pre>NameError: name 'Type' is not defined</pre></li>
+<li><pre>Traceback (most recent call last):
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/execution_base.py", line 60, in call_test_function
+    test_function(
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/core.py", line 48, in wrapper
+    result = test_function(module, *args, **kwargs)
+  File "/var/folders/f7/xnz8v_b13td37s3k4w8t5j2h0000gn/T/tmp4ev0vblu/lab04-test.py", line 131, in test1_4
+    assertNotEqual(lst, lst2)
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/assertions.py", line 43, in assertNotEqual
+    if got == expected:
+  File "<tested-program>", line 199, in __eq__
+NameError: name 'Type' is not defined
+</pre></li>
+      </ul>
+      </li>
+      <li><b>testing queries</b>
+      <ul>
+      <li>Grade Percentage: 15</li>
+      <li>Your solution failed this test case! taking 0.301 sec</Li>
+<li><pre>RecursionError: maximum recursion depth exceeded while calling a Python object</pre></li>
+<li><pre>Traceback (most recent call last):
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/execution_base.py", line 60, in call_test_function
+    test_function(
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/core.py", line 48, in wrapper
+    result = test_function(module, *args, **kwargs)
+  File "/var/folders/f7/xnz8v_b13td37s3k4w8t5j2h0000gn/T/tmpvxw3phlb/lab04-test.py", line 155, in test1_5
+    assertEquals(0, len(lst))
+  File "<tested-program>", line 229, in __len__
+  File "<tested-program>", line 229, in __len__
+  File "<tested-program>", line 229, in __len__
+  [Previous line repeated 495 more times]
+RecursionError: maximum recursion depth exceeded while calling a Python object
+</pre></li>
+      </ul>
+      </li>
+      <li><b>testing bulk operations</b>
+      <ul>
+      <li>Grade Percentage: 15</li>
+      <li>Your solution failed this test case! taking 0.311 sec</Li>
+<li><pre>RecursionError: maximum recursion depth exceeded</pre></li>
+<li><pre>Traceback (most recent call last):
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/execution_base.py", line 60, in call_test_function
+    test_function(
+  File "/Users/lord_pretzel/.pyenv/versions/3.9.0/lib/python3.9/site-packages/grader-0.0.1-py3.9.egg/grader/core.py", line 48, in wrapper
+    result = test_function(module, *args, **kwargs)
+  File "/var/folders/f7/xnz8v_b13td37s3k4w8t5j2h0000gn/T/tmpig_8k3ja/lab04-test.py", line 194, in test1_6
+    lst3 = lst+lst2
+  File "<tested-program>", line 287, in __add__
+  File "<tested-program>", line 287, in __add__
+  File "<tested-program>", line 287, in __add__
+  [Previous line repeated 993 more times]
+RecursionError: maximum recursion depth exceeded
+</pre></li>
+      </ul>
+      </li>
+      <li><b>testing iteration</b>
+      <ul>
+      <li>Grade Percentage: 15</li>
+      <li>Your solution succeeded taking 0.290 sec</Li>
+      </ul>
+      </li>
+    </ul>
+  </body>
+</html>

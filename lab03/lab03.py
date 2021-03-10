@@ -9,7 +9,7 @@ S = TypeVar('S')
 # EXERCISE 1
 #################################################################################
 def mysort(lst, compare):
-    
+
     """
     This method should sort input list lst of elements of some type T.
 
@@ -26,7 +26,7 @@ def mysort(lst, compare):
             else:
                 break
     return lst
-    
+
 def mybinsearch(lst, elem, compare):
     """
     This method search for elem in lst using binary search.
@@ -47,9 +47,9 @@ def mybinsearch(lst, elem, compare):
         elif compare(lst[mid], elem) == -1:
             end = mid + 1
     return -1
-        
-        
-    
+
+
+
 class Student():
     """Custom class to test generic sorting and searching."""
     def __init__(self, name, gpa):
@@ -136,9 +136,9 @@ class PrefixSearcher():
         self.data = []
         ##index = 0
         for j in range(0, len(document)):
-            self.data.append(document(j, j+(k-1))
+            self.data.append(document(j, j+(k-1)))
             ##index = index + 1
-        mysort(self.data, ??)
+        #mysort(self.data, ??)
 
 
     def search(self, q):
@@ -162,7 +162,7 @@ class PrefixSearcher():
                 elif compare(lst[mid], q) == 0:
                     return true
                     break
-            
+
 
 # 30 Points
 def test2():
