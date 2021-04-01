@@ -127,7 +127,25 @@ def test_check_delimiters_6():
 ################################################################################
 # INFIX -> POSTFIX CONVERSION
 ################################################################################
-
+def check(tok, postfix, ops, prec):
+    if tok.isdigit():
+        postfix.append(tok)
+    elif ops.empty() or ops.top.val == "(" or tok == "(":
+        ops.push(tok)
+    elif tok == ")":
+        x = ops.pop()
+        while x != "(":
+            postfix.append(x)
+            x = ops.pop()
+    elif prec[tok] > prec[ops.top.val]:
+        ops.push(tok)
+    elif prec[tok] == prec[ops.top.val]:
+        postfix.append(ops.pop())
+        ops.push(tok)
+    elif prec[tok] < prec[ops.top.val]:
+        postfix.append(ops.pop())
+        check(tok, postfix, ops, prec)
+        
 def infix_to_postfix(expr):
     """Returns the postfix form of the infix expression found in `expr`"""
     # you may find the following precedence dictionary useful
@@ -137,7 +155,10 @@ def infix_to_postfix(expr):
     postfix = []
     toks = expr.split()
     ### BEGIN SOLUTION
-    
+    for j in toks:
+        check(tok, postfix, ops, prec)
+    while not ops.empty():
+        postfix.append(ops.pop())
     ### END SOLUTION
     return ' '.join(postfix)
 
