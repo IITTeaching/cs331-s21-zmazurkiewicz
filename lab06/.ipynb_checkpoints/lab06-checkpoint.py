@@ -51,22 +51,6 @@ def check_delimiters(expr):
     delim_closers = '})]>'
 
     ### BEGIN SOLUTION
-    s = Stack()
-    for j in expr:
-        try:
-            if delim_openers.index(j) >= 0:
-                s.push(j)
-        except ValueError:
-            pass
-        try:
-            if delim_closers.index(j) >= 0:
-                if s.empty():
-                    return False
-                if delim_openers.index(s.pop()) != delim_closers.index(j):
-                    return False
-        except ValueError:
-            pass
-    return s.empty()
     ### END SOLUTION
 
 ################################################################################
@@ -137,7 +121,6 @@ def infix_to_postfix(expr):
     postfix = []
     toks = expr.split()
     ### BEGIN SOLUTION
-    
     ### END SOLUTION
     return ' '.join(postfix)
 
@@ -178,6 +161,9 @@ class Queue:
         self.head = -1
         self.tail = -1
 
+    ### BEGIN SOLUTION
+    ### END SOLUTION
+
     def enqueue(self, val):
         ### BEGIN SOLUTION
         ### END SOLUTION
@@ -193,7 +179,6 @@ class Queue:
 
     def empty(self):
         ### BEGIN SOLUTION
-        return self.top == None
         ### END SOLUTION
 
     def __bool__(self):
