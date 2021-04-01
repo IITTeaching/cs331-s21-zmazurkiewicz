@@ -201,15 +201,26 @@ class Queue:
 
     def enqueue(self, val):
         ### BEGIN SOLUTION
+        if self.tail != None:
+            raise RunTimeError("The queue is full.")
+        else:
+            self.tail = val
         ### END SOLUTION
 
     def dequeue(self):
         ### BEGIN SOLUTION
+        if self.head == None && self.tail == None:
+            raise RunTimeError("The queue is empty.")
+        else:
+            for j in self:
+                self[j] == self[j+1]
+            self.tail = None
         ### END SOLUTION
 
     def resize(self, newsize):
         assert(len(self.data) < newsize)
         ### BEGIN SOLUTION
+        
         ### END SOLUTION
 
     def empty(self):
@@ -230,6 +241,8 @@ class Queue:
 
     def __iter__(self):
         ### BEGIN SOLUTION
+        for j in self:
+            yeild self[j]
         ### END SOLUTION
 
 ################################################################################
