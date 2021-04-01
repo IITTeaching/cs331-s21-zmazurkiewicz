@@ -51,22 +51,6 @@ def check_delimiters(expr):
     delim_closers = '})]>'
 
     ### BEGIN SOLUTION
-    s = Stack()
-    for j in expr:
-        try:
-            if delim_openers.index(j) >= 0:
-                s.push(j)
-        except ValueError:
-            pass
-        try:
-            if delim_closers.index(j) >= 0:
-                if s.empty():
-                    return False
-                if delim_openers.index(s.pop()) != delim_closers.index(j):
-                    return False
-        except ValueError:
-            pass
-    return s.empty()
     ### END SOLUTION
 
 ################################################################################
@@ -127,25 +111,7 @@ def test_check_delimiters_6():
 ################################################################################
 # INFIX -> POSTFIX CONVERSION
 ################################################################################
-def check(tok, postfix, ops, prec):
-    if tok.isdigit():
-        postfix.append(tok)
-    elif ops.empty() or ops.top.val == "(" or tok == "(":
-        ops.push(tok)
-    elif tok == ")":
-        x = ops.pop()
-        while x != "(":
-            postfix.append(x)
-            x = ops.pop()
-    elif prec[tok] > prec[ops.top.val]:
-        ops.push(tok)
-    elif prec[tok] == prec[ops.top.val]:
-        postfix.append(ops.pop())
-        ops.push(tok)
-    elif prec[tok] < prec[ops.top.val]:
-        postfix.append(ops.pop())
-        check(tok, postfix, ops, prec)
-        
+
 def infix_to_postfix(expr):
     """Returns the postfix form of the infix expression found in `expr`"""
     # you may find the following precedence dictionary useful
@@ -155,10 +121,6 @@ def infix_to_postfix(expr):
     postfix = []
     toks = expr.split()
     ### BEGIN SOLUTION
-    for j in toks:
-        check(tok, postfix, ops, prec)
-    while not ops.empty():
-        postfix.append(ops.pop())
     ### END SOLUTION
     return ' '.join(postfix)
 
@@ -199,33 +161,24 @@ class Queue:
         self.head = -1
         self.tail = -1
 
+    ### BEGIN SOLUTION
+    ### END SOLUTION
+
     def enqueue(self, val):
         ### BEGIN SOLUTION
-        if self.tail != None:
-            raise RunTimeError("The queue is full.")
-        else:
-            self.tail = val
         ### END SOLUTION
 
     def dequeue(self):
         ### BEGIN SOLUTION
-        if self.head == None && self.tail == None:
-            raise RunTimeError("The queue is empty.")
-        else:
-            for j in self:
-                self[j] == self[j+1]
-            self.tail = None
         ### END SOLUTION
 
     def resize(self, newsize):
         assert(len(self.data) < newsize)
         ### BEGIN SOLUTION
-        
         ### END SOLUTION
 
     def empty(self):
         ### BEGIN SOLUTION
-        return self.top == None
         ### END SOLUTION
 
     def __bool__(self):
@@ -241,8 +194,6 @@ class Queue:
 
     def __iter__(self):
         ### BEGIN SOLUTION
-        for j in self:
-            yeild self[j]
         ### END SOLUTION
 
 ################################################################################
