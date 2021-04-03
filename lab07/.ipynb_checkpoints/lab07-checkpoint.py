@@ -20,7 +20,8 @@ class ExtensibleHashTable:
     def find_bucket(self, key):
         # BEGIN_SOLUTION
         # END_SOLUTION
-
+        pass
+            
     def __getitem__(self, key):
         # BEGIN_SOLUTION
         h = self.hash(key) % self.n_buckets
@@ -80,7 +81,6 @@ class ExtensibleHashTable:
                 yield self.buckets[j] 
             elif self.buckets == None:
                 continue
-        #yield the items, if it is a none, value you dont yield it
         ### END SOLUTION
 
     def keys(self):
@@ -93,8 +93,6 @@ class ExtensibleHashTable:
                 yield self.buckets[j][1]
             elif self.buckets[j][1] == None:
                 continue
-        #like iter, find values instead of the keys
-        #go through list and if it isnt none, yield the second value
         ### END SOLUTION
 
     def items(self):
@@ -108,7 +106,6 @@ class ExtensibleHashTable:
                 yield tuple
             elif self.buckets[j] == None and self.buckets[j][1] == None:
                 continue
-        #yield both keys and values
         ### END SOLUTION
 
     def __str__(self):
