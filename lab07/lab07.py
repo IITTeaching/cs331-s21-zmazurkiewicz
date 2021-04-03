@@ -79,7 +79,7 @@ class ExtensibleHashTable:
         for j in range self.buckets:
             if self.buckets[j] != None:
                 yield self.buckets[j] 
-            elif self.buckets == None:
+            elif self.buckets[j] == None:
                 continue
         ### END SOLUTION
 
