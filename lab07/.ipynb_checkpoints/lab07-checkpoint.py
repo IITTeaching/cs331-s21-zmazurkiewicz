@@ -24,7 +24,7 @@ class ExtensibleHashTable:
             
     def __getitem__(self, key):
         # BEGIN_SOLUTION
-        h = self.hash(key) % self.n_buckets
+        h = hash(key) % self.n_buckets
         if self.buckets[h] != None:
             if self.buckets == h:
                 return self.buckets[h][1]
