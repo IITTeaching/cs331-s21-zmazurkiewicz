@@ -1,4 +1,4 @@
- # Lab 7 - Hashtables
+# Lab 7 - Hashtables
 
 ## Extensible Hashtables with Open Addressing
 

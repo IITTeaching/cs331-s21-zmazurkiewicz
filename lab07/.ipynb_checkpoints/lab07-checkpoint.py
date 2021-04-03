@@ -11,57 +11,21 @@ class ExtensibleHashTable:
         self.fillfactor = fillfactor
         self.buckets = [None] * n_buckets
         self.nitems = 0
-        
-        #when there is a collision, you just move it to the next open spot
-        when storing key/value you have to store them as a tuple.
-        fill factor requirement, you would have to extend the data. 
-        first item is the key ([h][0])
 
-        
     def find_bucket(self, key):
         # BEGIN_SOLUTION
         # END_SOLUTION
 
-    def __getitem__(self, key): #HELP
+    def __getitem__(self,  key):
         # BEGIN_SOLUTION
-        h = self.hash(key) % self.n_buckets
-        if self.buckets[h] != None:
-            if self.buckets == h:
-                return self.buckets[h][1]
-            else:
-                h = (h + 1) % self.n_buckets
-        elif self.buckets[h] == None:
-            raise KeyError("the key doesn't exist in the hashtable")
-        #to find the item, you have to hash the key and then find what position it is in. That should give you the position and find the value of that position
-        #keep in mind collisions keep moving it over until you find an empty spot
-        #you cant hash it and find it there, if you move it over, you have to look for it and see if that is the same to your value. 
-        #storing tuples have multiple items, is the first one equal to the key, and if not keep looking for it.
         # END_SOLUTION
-        
-    def extend(self, newn_buckets):
-        self.
-        make new table
-        new list
-        double buckets
-        tranfer current buckets to a new list
-        and set buckets equal to that new list
-        
-    def __setitem__(self, key, value): #HELP
+
+    def __setitem__(self, key, value):
         # BEGIN_SOLUTION
-        h = hash(key) % self.n_buckets
-        if self.buckets[h] and self.data[h][0] != key:
-            
-         
-        self.buckets[h] = (key, value)
-        h=h+1 % n_buckets
-        #keep in mind collisions
         # END_SOLUTION
 
     def __delitem__(self, key):
         # BEGIN SOLUTION
-        h = hash(key) % self.n_buckets
-        if self.buckets[h] and self.buckets[h][0] == key:
-            self.buckets[h] = None
         # END SOLUTION
 
     def __contains__(self, key):
@@ -79,12 +43,6 @@ class ExtensibleHashTable:
 
     def __iter__(self):
         ### BEGIN SOLUTION
-        for j in range self.buckets:
-            if self.buckets[j] != None:
-                yield self.buckets[j] 
-            elif self.buckets == None:
-                continue
-        #yield the items, if it is a none, value you dont yield it
         ### END SOLUTION
 
     def keys(self):
@@ -92,27 +50,10 @@ class ExtensibleHashTable:
 
     def values(self):
         ### BEGIN SOLUTION
-        for j in range self.buckets:
-            if self.buckets[j][1] != None:
-                yield self.buckets[j][1]
-            elif self.buckets[j][1] == None:
-                continue
-        #like iter, find values instead of the keys
-        #go through list and if it isnt none, yield the second value
         ### END SOLUTION
 
     def items(self):
         ### BEGIN SOLUTION
-        tuple = ()
-        for j in range self.buckets:
-            tkey = self.buckets[j]
-            tvalue = self.buckets[j][1]
-            if self.buckets[j] != None and self.buckets[j][1] != None:
-                tuple = (tkey, tvalue)
-                yield tuple
-            elif self.buckets[j] == None and self.buckets[j][1] == None:
-                continue
-        #yield both keys and values
         ### END SOLUTION
 
     def __str__(self):
