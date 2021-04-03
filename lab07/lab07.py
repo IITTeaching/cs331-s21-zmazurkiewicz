@@ -76,7 +76,7 @@ class ExtensibleHashTable:
 
     def __iter__(self):
         ### BEGIN SOLUTION
-        for j in range self:
+        for j in range(self.buckets):
             if self.buckets[j] != None:
                 yield self.buckets[j] 
             elif self.buckets[j] == None:
