@@ -14,7 +14,7 @@ class ExtensibleHashTable:
         
         #when there is a collision, you just move it to the next open spot
         #when storing key/value you have to store them as a tuple.
-        fill factor requirement, you would have to extend the data. 
+        #fill factor requirement, you would have to extend the data. 
         #first item is the key ([h][0])
 
     def find_bucket(self, key):
