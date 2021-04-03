@@ -88,7 +88,7 @@ class ExtensibleHashTable:
 
     def values(self):
         ### BEGIN SOLUTION
-        for j in range self.buckets:
+        for j in range(self.buckets):
             if self.buckets[j][1] != None:
                 yield self.buckets[j][1]
             elif self.buckets[j][1] == None:
@@ -98,7 +98,7 @@ class ExtensibleHashTable:
     def items(self):
         ### BEGIN SOLUTION
         tuple = ()
-        for j in range self.buckets:
+        for j in range(self.buckets):
             tkey = self.buckets[j]
             tvalue = self.buckets[j][1]
             if self.buckets[j] != None and self.buckets[j][1] != None:
