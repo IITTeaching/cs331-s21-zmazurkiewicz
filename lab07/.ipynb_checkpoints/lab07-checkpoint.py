@@ -21,7 +21,7 @@ class ExtensibleHashTable:
         # BEGIN_SOLUTION
         # END_SOLUTION
 
-    def __getitem__(self, key): #HELP
+    def __getitem__(self, key):
         # BEGIN_SOLUTION
         h = self.hash(key) % self.n_buckets
         if self.buckets[h] != None:
@@ -45,10 +45,10 @@ class ExtensibleHashTable:
         
     def __setitem__(self, key, value): #HELP
         # BEGIN_SOLUTION
-        #h = hash(key) % self.n_buckets
-        #if self.fillfactor
-        #self.buckets[h] = (key, value)
-        #h = (h + 1) % n_buckets
+        h = hash(key) % self.n_buckets
+        if self.fillfactor
+        self.buckets[h] = (key, value)
+        h = (h + 1) % n_buckets
         pass
         #keep in mind collisions
         # END_SOLUTION
