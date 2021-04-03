@@ -13,11 +13,10 @@ class ExtensibleHashTable:
         self.nitems = 0
         
         #when there is a collision, you just move it to the next open spot
-        when storing key/value you have to store them as a tuple.
+        #when storing key/value you have to store them as a tuple.
         fill factor requirement, you would have to extend the data. 
-        first item is the key ([h][0])
+        #first item is the key ([h][0])
 
-        
     def find_bucket(self, key):
         # BEGIN_SOLUTION
         # END_SOLUTION
@@ -38,20 +37,18 @@ class ExtensibleHashTable:
         #storing tuples have multiple items, is the first one equal to the key, and if not keep looking for it.
         # END_SOLUTION
         
-    def extend(self, newn_buckets):
-        self.
-        make new table
-        new list
-        double buckets
-        tranfer current buckets to a new list
-        and set buckets equal to that new list
+        #make new table
+        #new list
+        #double buckets
+        #tranfer current buckets to a new list
+        #and set buckets equal to that new list
         
     def __setitem__(self, key, value): #HELP
         # BEGIN_SOLUTION
         #h = hash(key) % self.n_buckets
-        #if self.buckets[h] and self.data[h][0] != key:
+        #if self.fillfactor
         #self.buckets[h] = (key, value)
-        #h=h+1 % n_buckets
+        #h = (h + 1) % n_buckets
         pass
         #keep in mind collisions
         # END_SOLUTION
