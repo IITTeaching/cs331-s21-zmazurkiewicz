@@ -21,56 +21,13 @@ class Heap:
     @staticmethod
     def _right(idx):
         return idx*2+2
-    
-    def position_exists(self, idx):
-        return idx >= len(self)
-    
-    def swap_position(self, parent, child):
-        prntvl = self.data[parent]
-        chldvl = self.data[child]
-        self.data[parent] = chldvl
-        self.data[child] = prntvl
-    
-    def heapify(self, idx=0): #like trickle down
+
+    def heapify(self, idx=0):
         ### BEGIN SOLUTION
-        lftchld = Heap._left(idx)
-        rghtchld = Heap._right(idx)
-        crrntvl = self.data[idx]
-        if self.position_exists(lftchld):
-            if self.position_exists(rghtchld):
-                lftchldvl = self.data[lftchld]
-                rghtchldvl = self.data[rghtchld]
-                if lftchldvl > crrntvl or rghtchldvl > crrntdvl:
-                    if lftchldvl > rghtchldvl:
-                        self.swap_position(idx, lftchld)
-                        self.heapify(lftchld)
-                    else:
-                        self.swap_position(idx, rghtchld)
-                        self.heapify(rghtchld)
-                else:
-                    lftchldvl = self.data[lftchld]
-                    if lftchldvl > crrntvl:
-                        self.swap_position(idx, lftchld)
-                        self.heapify(lftchld)
-            elif position_exists(rghtchld):
-                rghtchldvl = self.data[rghtchld]
-                if rghtchldvl > crrntvl:
-                    self.swap_postions(idx, rghtchld)
-                    self.heapify(rghtchld)
         ### END SOLUTION
-        
-    def trickle_up(self, idx):
-        p = Heap._parent(idx)
-        pvl = self.data[p]
-        crrntvl = self.data[n]
-        if pvl < crrntvl:
-            self.swap_position(p, idx)
-            self.trickle_up(p)
 
     def add(self, x):
         ### BEGIN SOLUTION
-        self.data.append(n)
-        self.trickle_up(len(self.data) - 1)
         ### END SOLUTION
 
     def peek(self):
@@ -173,31 +130,6 @@ def test_key_heap_5():
 ################################################################################
 def running_medians(iterable):
     ### BEGIN SOLUTION
-    min_heap = Heap(lambda x:-x) #greater than
-    max_heap = Heap() #less than or equal too
-    medians = []
-    current_median = 0
-    
-    for val in iterable:
-        if len(median) == 0:
-            median.append(val)
-            max_heap.add(val)
-        else:
-            if val > median(-1):
-                min_heap.add(val)
-            else:
-                max_heap.add(val)
-            if len(min_heap) - len(max_heap) > 1:
-                max_heap.add(min_heap.pop())
-            elif len(max_heap) - len(min_heap) > 1:
-                min_heap.add(max_heap.pop())
-                
-            if len(max_heap) > len(min_heap):
-                median.append(max_heap.peek())
-            elif len(min_heap) > len(max_heap):
-                median.append(min_heap.peek())
-            else:
-                median.append(max_heap.peek())
     ### END SOLUTION
 
 ################################################################################
@@ -242,16 +174,6 @@ def test_median_3():
 ################################################################################
 def topk(items, k, keyf):
     ### BEGIN SOLUTION
-    min_heap = Heap(lambda x: -keyf(x))
-    for val in items:
-        if len(min_heap) < k:
-            min_heap.add(val)
-        elif keyf(min_heap.peak()) < keyf(item):
-            min_heap.pop()
-            min_heap.add(item)
-    temp = min_heap.data
-    temp.reverse()
-    return temp
     ### END SOLUTION
 
 ################################################################################
